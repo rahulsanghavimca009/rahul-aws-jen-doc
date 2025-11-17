@@ -13,14 +13,14 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t RahulAWSEc2:latest .'
+                sh 'docker build -t rahulaws-jen-doc:latest .'
             }
         }
         stage('Run Container') {
             steps {
                 sh '''
                 docker rm -f java_simple_app || true
-                docker run -d --name RahulAWSEc2 -p 9090:9090 RahulAWSEc2:latest
+                docker run -d --name rahulaws-jen-doc -p 9090:9090 rahulaws-jen-doc:latest
                 '''
             }
         }
