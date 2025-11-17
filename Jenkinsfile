@@ -19,7 +19,7 @@ pipeline {
         stage('Run Container') {
             steps {
                 sh '''
-                docker rm -f java_simple_app || true
+                docker rm -f rahulaws-jen-doc || true
                 docker run -d --name rahulaws-jen-doc -p 9090:9090 rahulaws-jen-doc:latest
                 '''
             }
